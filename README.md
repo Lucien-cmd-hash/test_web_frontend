@@ -23,6 +23,7 @@ Le navigateur appelle directement Python. Il n’y a pas de proxy ni de route AP
 1. Déployer le backend sur Railway et récupérer son domaine HTTPS public (voir son README).
 2. Commit puis push ce dépôt sur GitHub.
 3. Dans Vercel, importer le dépôt GitHub du **frontend**. Choisir Next.js si nécessaire ; garder la racine du dépôt comme Root Directory.
+   Le fichier `vercel.json` impose le framework Next.js et son dossier de sortie `.next`, même si le projet Vercel a initialement été créé avec le preset « Other » ou le dossier `public`.
 4. Avant le build, ajouter `NEXT_PUBLIC_API_URL=https://TON-BACK.up.railway.app` pour l’environnement Production (et Preview si utilisé).
 5. Ajouter aussi `ENABLE_EXPERIMENTAL_COREPACK=1` dans Vercel pour utiliser la version pnpm 11.19.0 indiquée par `packageManager`, puis déployer.
 6. Copier l’origine du front, par exemple `https://TON-FRONT.vercel.app`, dans `ALLOWED_ORIGINS` sur Railway puis redéployer le backend.
